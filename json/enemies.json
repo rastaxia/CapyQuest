@@ -1,0 +1,70 @@
+{
+  "levelOne": [
+    {
+      "name": "Zombie",
+      "hp": 75,
+      "attack": 20,
+      "img": "./images/zombie1.png"
+    },
+    {
+      "name": "Skeleton",
+      "hp": 50,
+      "attack": 10,
+      "img": "./images/skeleton1.png"
+    },
+    {
+      "name": "Slime",
+      "hp": 10,
+      "attack": 100,
+      "img": "./images/slime1.png"
+    }
+  ],
+  "levelTwo": [
+    {
+      "name": "Zombie sprinter",
+      "hp": 150,
+      "attack": 50,
+      "img": "./images/zombieSprinter.png"
+    },
+    {
+      "name": "Slime bouncer",
+      "hp": 50,
+      "attack": 150,
+      "img": "./images/slimeBouncer.png"
+    },
+    {
+      "name": "Skeleton warrior",
+      "hp": 100,
+      "attack": 40,
+      "img": "./images/skeletonKnight.png"
+    }
+  ],
+  "levelThree": [
+    {
+      "name": "Zombie chad",
+      "hp": 300,
+      "attack": 75,
+      "img": "./images/zombieChad.png"
+    },
+    {
+      "name": "Slime prowler",
+      "hp": 100,
+      "attack": 200,
+      "img": "./images/slimeProwler.png"
+    },
+    {
+      "name": "Skeleton mage",
+      "hp": 200,
+      "attack": 60,
+      "img": "./images/skeletonMage.png"
+    }
+  ],
+  "EndBoss": [
+    {
+      "name": "Zyklon the destroyer",
+      "hp": 1000,
+      "attack": 199,
+      "img": "./images/Zyklon.png"
+    }
+  ]
+}

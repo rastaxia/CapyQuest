@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <link rel="icon" type="image/x-icon" href="./assets/capybara.png" />
+    <title>CapyQuest</title>
+    <script defer src="./js/script.js"></script>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <!-- landing page -->
+    <main>
+      <div class="title">
+        <h1 id="capy">Capy</h1>
+        <h1 id="quest">Quest</h1>
+      </div>
+      <div class="startingButtons">
+        <button id="start">Start</button>
+        <button id="options">Options</button>
+        <button id="end">End</button>
+      </div>
+    </main>
+    <!-- options overlay -->
+    <section id="optionsOverlay">
+      <div class="optionsContent">
+        <div class="optionsTitle">
+          <h2>Options</h2>
+          <h2>Menu</h2>
+        </div>
+        <div class="soundEffect">
+          <span class="optionTag">Sound effects:</span>
+          <span class="optionTag" id="soundEffect">50%</span>
+          <input id="seSlide" type="range" min="0" max="100" value="50" />
+        </div>
+        <div class="backgroundMusic">
+          <span class="optionTag">Background music</span>
+          <span class="optionTag" id="backgroundMusic">50%</span>
+          <input id="bgmSlide" type="range" min="0" max="100" value="50" />
+        </div>
+        <div class="voiceActing">
+          <span class="optionTag"> Voice acting </span>
+          <label class="switch">
+            <input type="checkbox" />
+            <span class="slider round"></span>
+          </label>
+          <span class="optionTag"> off</span>
+        </div>
+        <div class="optionsButtons">
+          <button id="save">Save</button>
+          <button id="exit">Exit</button>
+        </div>
+      </div>
+    </section>
+    <!-- end game -->
+    <section class="endScreen">
+      <img src="./assets/sadCat.gif" alt="Sad cat" />
+    </section>
+    <!-- game screen -->
+    <section class="gameScreen">
+      <section class="gameBox">
+        <div class="screenOne">
+          <img
+            id="capybara"
+            src="./images/capybaraSit.png"
+            alt="sitting capybara"
+          />
+          <img id="cave" src="./images/cave.png" alt="cave entrance" />
+          <section class="explain">
+            <span> A / Arrow left: Move left </span>
+            <span> D / Arrow right: Move right </span>
+          </section>
+        </div>
+        <div class="screenTwo">
+          <p>
+            <span>???: Hey you..... are you awake?</span>
+            <span class="you">You feel a slight poking in your side</span>
+            <span class="you">You wake up after a second poke</span>
+            <span
+              >???: Heya little buddy, can you tell me what your name is?</span
+            >
+          </p>
+          <article class="name">
+            <label for="name">Name:</label>
+            <input type="text" id="name" />
+            <br />
+            <button class="nameBtn">Submit name</button>
+          </article>
+        </div>
+        <div class="screenThree">
+          <p>
+            <span>
+              ???: Oh, I'm sorry I forgot you're a animal you can't speak.
+            </span>
+            <span> ???: Well let me name you then...... </span>
+            <span>
+              ???: Hmm I think I'll call you
+              <span id="playerName"></span>
+            </span>
+          </p>
+          <span class="you">You give a happy chirp</span>
+          <p>
+            <span>???: Oh my I totally forgot to introduce myself. </span>
+            <span>???: My name is Amanda NotMainCharacter! </span>
+
+            <span
+              >Amanda: I know a very weird last name.... I am European!
+            </span>
+            <span>
+              Amanda: During my time walking here I found these quirky looking
+              hats.
+            </span>
+            <span>Amanda: Would you like to try one on? </span>
+          </p>
+          <section class="hatChoice">
+            <button id="chooseClass">Yes</button>
+            <button class="noClass">No</button>
+          </section>
+        </div>
+        <div class="classSelect">
+          <h1>Choose your class!</h1>
+          <article>
+            <section class="classes" id="mage">
+              <h2>Mage</h2>
+              <img src="./images/mage.png" alt="Capybara with mage hat" />
+            </section>
+            <section class="classes" id="rogue">
+              <h2>Rogue</h2>
+              <img src="./images/rogue.png" alt="Capybara with rogue hat" />
+            </section>
+            <section class="classes" id="warrior">
+              <h2>Warrior</h2>
+              <img src="./images/warrior.png" alt="Capybara with warrior hat" />
+            </section>
+          </article>
+        </div>
+        <div class="afterClass">
+          <p>
+            <span>
+              Amanda: Wow it looks so great on you! I'm so glad you chose to
+              wear one.
+            </span>
+            <span> Amanda: I'm not sure but you aura has changed! </span>
+          </p>
+          <p>
+            <span class="you"> You look at Amanda confused </span>
+          </p>
+          <p>
+            <span> Amanda: Oh you must be wondering how I know that. </span>
+            <span> Amanda: Let me introduce myself properly. </span>
+            <span>
+              Amanda: I am Amanda NotMainCharacter and I am a witch. I have been
+              studying the purest form of magic for years. That's why I came to
+              this land.
+            </span>
+            <span> But...... </span>
+          </p>
+          <p>
+            <span>
+              Before Amanda could finish her sentence a loud noise was heard
+            </span>
+          </p>
+          <button class="caveAmbush">Continue</button>
+        </div>
+        <div class="playerChoice">
+          <span>What do you do?</span>
+          <button id="run">Run</button>
+          <button id="look">Look around</button>
+          <button id="fight">Fight</button>
+        </div>
+        <!-- fight screen reuse -->
+        <div class="fight">
+          <section class="player">
+            <span>Player health:</span>
+            <span id="playerHealth">0</span>
+            <img
+              id="player"
+              src="./images/capyAngry.png"
+              alt="Angry Capybara"
+            />
+          </section>
+          <section class="enemy">
+            <span id="enemyName">Enemy health:</span>
+            <span id="enemyHealth">0</span>
+            <img id="enemy" src="" alt="Monster" />
+          </section>
+          <section class="fightOptions">
+            <button id="attack">Attack</button>
+            <button id="special">Special</button>
+            <button id="flee">Flee</button>
+          </section>
+        </div>
+        <!-- after fights -->
+        <div class="afterFight1">
+          <p>
+            <span> Amanda: Wow good job little buddy! </span>
+            <span>
+              Amanda: Anyways like I was saying I am here to study the purest
+              form of magic.
+            </span>
+            <span>
+              Amanda: After a long while I found out where the source is coming
+              from.
+            </span>
+            <span>
+              Amanda: You know, you're pretty strong so I want to propose a
+              deal.
+            </span>
+            <span class="you"> You hold you head sideways </span>
+            <span>
+              Amanda: You help me find the source of the magic and I'll help you
+              since I will be the strongest witch in the world. I can probably
+              give you a wish
+            </span>
+            <span> Amanda: I think........ </span>
+            <span> Amanda: I am not sure....... </span>
+            <span>
+              Amanda: Anyways that's some to think about later lets go
+            </span>
+            <span class="you"> You follow Amanda out of your little cave </span>
+          </p>
+          <button id="acceptDeal">Continue</button>
+        </div>
+        <div class="pathSelect"></div>
+        <div id="swamp">
+          <img src="./images/swamp.jpeg" alt="swamp" id="swampImg" />
+          <article id="swampText">
+            <p>
+              <span>Amanda: Wow look all these cute frogies</span>
+              <span>
+                Amanda: This swamp looked way safer then the forest glad we
+                didn't go there
+              </span>
+              <span>
+                Amanda pauses for a second and looks at you with a confused face
+              </span>
+              <span class="you">
+                You look at Amanda with a confused face as well
+              </span>
+              <span> Amanda: WHAT DO YOU EVEN EAT??!?!?! </span>
+              <span class="you"> You look at Amanda with a confused face </span>
+              <span>
+                Amanda: I.... I just don't know okay.... and when I don't know
+                something I get upset
+              </span>
+              <span> she looks at a tree and starts mumbling to herself </span>
+              <span class="you">
+                you see her staff start to glow before a bright light comes
+                out..... she blew up the tree and 50 more
+              </span>
+              <span>
+                Amanda: Man that feels good! Shall we continue little buddy?
+              </span>
+            </p>
+            <button id="swampContinue">Continue</button>
+            <button class="noClass">No</button>
+          </article>
+        </div>
+        <div class="afterFight2">
+          <p>
+            <span>
+              Amanda: Wooooooooow I am glad you can handle.... that was my fault
+              wasn't it?
+            </span>
+            <span>
+              Amanda: Teehee oh well lets continue on our journey, have you
+              thought about what you want to wish for?
+            </span>
+            <span>
+              Amanda: Of course you haven't you're a little animal you can't
+              think for yourself silly me teehee
+            </span>
+            <span class="you">
+              You hiss at Amanda (I think capybara's can do that) and she looks
+              at you with a confused face
+            </span>
+            <span>
+              Amanda's eyes widen and she starts to laugh uncontrollably
+            </span>
+            <span>
+              Amanda: Oh my god you can hiss that's so cute! I'm sorry I didn't
+              mean to offend you lil cutie pie
+            </span>
+            <span>She pinches you in the cheek</span>
+            <span>
+              Amanda: Oh my you're aura got stronger again! I wonder what it is
+              lets test it out soon
+            </span>
+          </p>
+          <button id="afterFight2Continue">Continue</button>
+        </div>
+        <div id="field">
+          <img id="fieldImg" src="./images/field.jpeg" alt="Open filed" />
+          <section id="fieldText">
+            <p>
+              <span>
+                Amanda: Look at this beautiful field! the clouds do look a bit
+                dark
+              </span>
+              <span>
+                Amanda: I wonder if it's going to rain soon, I hope not I don't
+                want to get wet
+              </span>
+              <span>
+                Amanda: I wonder if you can swim, I don't think you can you
+                don't have any webbed feet
+              </span>
+              <span class="you">
+                You just look at Amanda she isn't looking at you just straight
+                forward
+              </span>
+              <span class="you">
+                You bump against her leg and she looks down at you
+              </span>
+              <span>
+                Amanda: Oh sorry I was just thinking about home.....
+              </span>
+              <span>
+                She doesn't say anything else and just keeps walking
+              </span>
+              <span class="you"> You let her be and just follow her </span>
+              <span>
+                As you walk further and further something jumps out of the tall
+                grass
+              </span>
+            </p>
+            <button id="fieldContinue">Continue</button>
+          </section>
+        </div>
+        <div class="afterFight3">
+          <p>
+            <span> Amanda: Sorry I didn't see that coming, I... </span>
+            <span> She looks away and just casts a healing spell on you </span>
+            <span class="you">You feel even stronger</span>
+            <span> Amanda: Do you think you'll keep that hat on for ever?</span>
+            <span class="you">You nod your head</span>
+            <span>
+              Amanda: I think you should, it looks really good on you
+            </span>
+            <span>
+              Amanda: I think we're almost there, I can feel the magic getting
+              stronger
+            </span>
+          </p>
+          <button id="afterFight3Continue">Continue</button>
+        </div>
+        <div id="vally">
+          <img id="vallyImg" src="./images/vally.jpeg" alt="Vally" />
+          <section id="vallyText">
+            <p>
+              <span>
+                As you walk out of the open field you reach a valley with a big
+                castle in the distance
+              </span>
+              <span>
+                Amanda: Let's go that castle is the place.... I promise once we
+                get there I'll tell you what I'm looking for
+              </span>
+              <span>
+                Amanda: Well... It's not really a what it's more of a who. His
+                name is Zyklon he used to be a great man
+              </span>
+              <span>
+                Amanda: He also used to be my best friend. You see when you go
+                to a magic school, young witches and wizards get assigned a
+                warrior to protect them
+              </span>
+              <span>
+                Amanda: Because most of us are not strong enough to protect our
+                selves yet... Even after graduating most witches just become
+                healers
+              </span>
+              <span>
+                Amanda: Zyklon was my warrior, he was the best warrior in the
+                school, he was so strong and kind and he always protected me...
+                I wasn't the best of students. I gave him a lot of trouble but
+                even when I swore at him he would just smile
+              </span>
+              <span> She looks at you and you can see tears in her eyes </span>
+              <span>
+                Amanda: I'm not sure if he'll even be the same person I knew
+              </span>
+              <span>
+                Amanda: The only thing I know is that he has the source of the
+                magic
+              </span>
+              <span class="you">
+                You look at Amanda and give her a little chirp
+              </span>
+              <span>
+                The heartfelt moment is cut to a abrupt end when something comes
+                flying down
+              </span>
+            </p>
+            <button id="vallyContinue">Continue</button>
+          </section>
+        </div>
+        <div class="afterFight4">
+          <p>
+            <span>
+              Amanda: Wow.... I didn't expect that to happen.... but you're
+              actually getting stronger
+            </span>
+            <span> As you walk you see a big castle in the distance </span>
+            <span class="you">
+              you start to feel uneasy and your hairs are starting to stand up
+            </span>
+            <span>
+              Amanda: That must be the castle, I can feel the magic coming from
+              there
+            </span>
+            <span>
+              Amanda: I'm not sure if you're ready for this but we have to go in
+            </span>
+          </p>
+          <button id="afterFight4Continue">Continue</button>
+        </div>
+        <div id="castle">
+          <img id="castleImg" src="./images/castle.jpeg" alt="Castle" />
+          <section id="castleText">
+            <p>
+              <span>
+                As the two of you walk up to the castle you see a big gate
+              </span>
+              <span>
+                Amanda: I'll try to open it you just stay behind me okay?
+              </span>
+              <span class="you">
+                You nod your head and stay behind Amanda
+              </span>
+              <span>
+                Amanda's staff starts to glow and she points it at the gate
+              </span>
+              <span>
+                After a second a big hole is blown in the gate the gate just
+                stats to open
+              </span>
+              <span>
+                Amanda: Oh.... it was open.... I guess I didn't have to do that
+              </span>
+              <span>
+                Amanda: Well let's go in, I can feel the magic coming from
+                inside
+              </span>
+              <span>
+                As you walk in you see a man standing in the middle of the room
+              </span>
+              <span>
+                Amanda: Zyklon! It's been so long! How have you been?
+              </span>
+              <span>
+                Zyklon looks at Amanda and you can see his eyes are glowing red,
+                he doesn't answer
+              </span>
+              <span> PREPARE FOR COMBAT </span>
+            </p>
+            <button id="castleContinue">Continue</button>
+          </section>
+        </div>
+        <div class="ending">
+          <p>
+            <span
+              >As amanda shoots a laser straight through Zyklon's chest....
+              nothing</span
+            >
+            <span>
+              No sound no movement, he just stands there with his eyes glowing
+            </span>
+            <span>
+              Amanda just sighs and looks at you, she looks sad and defeated
+            </span>
+            <span> Amanda: I'm sorry buddy I hope you're okay </span>
+            <span>
+              Amanda walks towards the still standing Zyklon and touches his
+              face
+            </span>
+            <span>
+              When she does this his eyes stop glowing and he disappears into
+              dust
+            </span>
+            <span>
+              She picks up the crystal eyes not full of joy... not full of
+              sadness... just nothing
+            </span>
+            <span> She sighs </span>
+            <span>
+              Amanda: Hey buddy, this is it this is the source.... but I don't
+              think we should use it
+            </span>
+            <span> Amanda: I am sorry for wasting your time </span>
+            <span> She opens a portal and walks through it </span>
+            <span>
+              You are alone just you after all this time it's still you
+            </span>
+            <button id="finalGoodbye">Go forward</button>
+          </p>
+        </div>
+        <div class="thankYou">
+          <span>
+            Well this was it, thank you so much for playing my prototype who
+            knows maybe someday I'll finish it. But for now this is it. :)
+          </span>
+          <span>Good bye.... for now</span>
+        </div>
+      </section>
+    </section>
+  </body>
+</html>

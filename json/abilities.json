@@ -1,0 +1,104 @@
+{
+  "mage": [
+    {
+      "levelOne": [
+        {
+          "name": "Fireball",
+          "damage": 30
+        }
+      ],
+      "levelTwo": [
+        {
+          "name": "Fireball",
+          "damage": 30
+        },
+        {
+          "name": "Smite",
+          "damage": 60
+        }
+      ],
+      "levelThree": [
+        {
+          "name": "Fireball",
+          "damage": 30
+        },
+        {
+          "name": "Smite",
+          "damage": 60
+        },
+        {
+          "name": "Conjure Sniper Rifle",
+          "damage": 300
+        }
+      ]
+    }
+  ],
+  "rogue": [
+    {
+      "levelOne": [
+        {
+          "name": "Throw Knife",
+          "damage": 30
+        }
+      ],
+      "levelTwo": [
+        {
+          "name": "Throw Knife",
+          "damage": 30
+        },
+        {
+          "name": "Shadow Stab",
+          "damage": 60
+        }
+      ],
+      "levelThree": [
+        {
+          "name": "Throw Knife",
+          "damage": 30
+        },
+        {
+          "name": "Shadow Stab",
+          "damage": 60
+        },
+        {
+          "name": "Not shadow clone jutsu",
+          "damage": 500
+        }
+      ]
+    }
+  ],
+  "warrior": [
+    {
+      "levelOne": [
+        {
+          "name": "Slash",
+          "damage": 30
+        }
+      ],
+      "levelTwo": [
+        {
+          "name": "Slash",
+          "damage": 30
+        },
+        {
+          "name": "Stab",
+          "damage": 60
+        }
+      ],
+      "levelThree": [
+        {
+          "name": "Slash",
+          "damage": 30
+        },
+        {
+          "name": "Stab",
+          "damage": 60
+        },
+        {
+          "name": "MEGA BONK",
+          "damage": 300
+        }
+      ]
+    }
+  ]
+}
